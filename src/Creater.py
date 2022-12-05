@@ -1,5 +1,5 @@
 #coding = utf-8
-import Writer
+import FileWriter
 import random
 class Creater:
     def __init__(self,frange,lrange):
@@ -44,3 +44,25 @@ class Creater:
             else:
                 result = f"{InntResult{LetterResult}"
             return result
+   def SCharLetterPassword(self,Head=true,Count=1,UserChoice=' '):
+       SCharLetterList = [")","`","!","@","#","$","%","^","&","*","_","-","+","=","|","}","]",":",";","<>",".","?","(","{","["]
+       IntResult = str(random.randint(self.frange,self.lrange))
+       SCharLetterResultList = []
+       if UserChoice != ' ':
+           if UserChoice not in SCharLetterList:
+               result = 0
+           else:
+               if Head:
+                   result = f"{UserChoice}{IntResult}"
+               else:
+                   result =f"{IntResult}{UserChoice}"
+           return result
+       for i in range(Count):
+           SCharletter = random.choice(SCharLetterList)
+           SCharLetterResultList.append(SCharLetter)
+       LetterResult = "".join(SCharLetterResultList)
+       if Head:
+           result = f"{LetterResult}{IntResult}"
+       else:
+           result = f"{IntResult}{LetterResult}"
+       return result
