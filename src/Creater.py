@@ -27,7 +27,7 @@ class Creater:
             if Head:
                 result = f"{LetterResult}{IntResult}"
             else:
-                result = f"{InntResult{LetterResult}"
+                result = f"{InntResult}{LetterResult}"
             return result
         if CaLetter:
             SCLetterCount = int(Count/2)
