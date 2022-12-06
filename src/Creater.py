@@ -19,7 +19,7 @@ class Creater:
                 return 0
             if not Head:
                 result = f"{IntResult}{UserChoice}"
-            else Head == False:
+            elif Head == False:
                 result = f"{UserChoice}{IntResult}"
             return result
         if CaLetter == False:
@@ -30,22 +30,22 @@ class Creater:
             LetterResult = "".join(SmLetterResultList)
             if Head:
                 result = f"{LetterResult}{IntResult}"
-            else Head == False:
+            elif Head == False:
                 result = f"{IntResult}{LetterResult}"
             return result
         if CaLetter:
             SCLetterCount = int(Count/2)
             SCLetterResultList = []
-            for i in range(SCLetterCount)
+            for i in range(SCLetterCount):
                 SmLetterResult = random.choice(self.SmLetterList)
                 SCLetterResultList.append(SmLetterResult)
-            for i in range(SCLetterCount)
+            for i in range(SCLetterCount):
                 CaLetterResult = random.choice(self.CaLetterList)
                 SCLetterResultList.append(CaLetterResult)
             LetterResult = "".join(SCLetterResultList)
             if Head:
                 result = f"{LetterResult}{IntResult}"
-            else Head == False:
+            elif Head == False:
                 result = f"{IntResult}{LetterResult}"
             return result 
     def SCharLetterPassword(self,Head=True,Count=1,UserChoice=' '):
@@ -57,7 +57,7 @@ class Creater:
             else:
                 if Head:
                     result = f"{UserChoice}{IntResult}"
-                else Head == False:
+                elif Head == False:
                     result =f"{IntResult}{UserChoice}"
             return result
         for i in range(Count):
@@ -66,17 +66,17 @@ class Creater:
         LetterResult = "".join(SCharLetterResultList)
         if Head:
             result = f"{LetterResult}{IntResult}"
-        else Head == False:
+        elif Head == False:
             result = f"{IntResult}{LetterResult}"
         return result
     def ALetterPassword(self,LHead=True,SHead=False,LCount=2,SCount=1,LUserChoice=' ',SUserChoice=' ',CaLetter=False):
         IntResult = str(random.randint(self.frange,self.lrange))
         if LUserChoice != ' ':
-            if LUserChoice,isalpha() == False:
+            if LUserChoice.isalpha() == False:
                 return 0
             elif LHead:
                 TempResult = f"{LUserChoice}{IntResult}"
-            else LHead == False:
+            elif LHead == False:
                 TempResult = f"{IntResult}{LUserChoice}"
         elif LUserChoice == ' ':
             TempResult = f"{IntResult}"
@@ -86,7 +86,7 @@ class Creater:
             elif SHead:
                 result = f"{SUserChoice}{IntResult}"
                 return result
-            else SHead == False:
+            elif SHead == False:
                 result = f"{IntResult}{SUserChoice}"
                 return result
         if CaLetter == False:
@@ -97,21 +97,21 @@ class Creater:
             LetterResult = "".join(SmLetterResultList)
             if LHead:
                 TempResult = f"{LetterResult}{IntResult}"
-            else LHead == False:
+            elif LHead == False:
                 TempResult = f"{IntResult}{LetterResult}"
         if CaLetter:
             SCLetterCount = int(LCount/2)
             SCLetterResultList = []
-            for i in range(SCLetterCount)
+            for i in range(SCLetterCount):
                 SmLetterResult = random.choice(self.SmLetterList)
                 SCLetterResultList.append(SmLetterResult)
-            for i in range(SCLetterCount)
+            for i in range(SCLetterCount):
                 CaLetterResult = random.choice(self.CaLetterList)
                 SCLetterResultList.append(CaLetterResult)
             LetterResult = "".join(SCLetterResultList)
             if LHead:
                 TempResult = f"{LetterResult}{IntResult}"
-            else LHead == False:
+            elif LHead == False:
                 TempResult = f"{IntResult}{LetterResult}"
         SCharLetterResultList = []
         for i in range(SCount):
@@ -120,6 +120,6 @@ class Creater:
         LetterResult = "".join(SCharLetterResultList)
         if SHead:
             result = f"{LetterResult}{TempResult}"
-        else SHead == False:
+        elif SHead == False:
             result = f"{TempResult}{LetterResult}"
         return result
