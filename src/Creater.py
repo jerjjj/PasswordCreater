@@ -1,19 +1,25 @@
-#coding = utf-8
-import FileWriter
+# coding = utf-8
 import random
+
+
 class Creater:
-    def __init__(self,frange,lrange):
+    def __init__(self, frange, lrange):
         self.frange = frange
         self.lrange = lrange
-        self.SCharLetterList = [")","`","!","@","#","$","%","^","&","*","_","-","+","=","|","}","]",":",";","<>",".","?","(","{","["]
+        self.SCharLetterList = [")", "`", "!", "@", "#", "$", "%", "^", "&", "*", "_", "-", "+", "=", "|", "}", "]",
+                                ":", ";", "<>", ".", "?", "(", "{", "["]
         self.SCharLetterStr = "()`!@#$%^&*_-+=|{}[]:;'<>,.?"
-        self.CaLetterList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-        self.SmLetterList = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+        self.CaLetterList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",
+                             "S", "T", "U", "V", "W", "X", "Y", "Z"]
+        self.SmLetterList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
+                             "s", "t", "u", "v", "w", "x", "y", "z"]
+
     def IntPassword(self):
-        result = str(random.randint(self.frange,self.lrange))
+        result = str(random.randint(self.frange, self.lrange))
         return result
-    def LetterPassword(self,Head=True,CaLetter=False,Count=2,UserChoice=' '):
-        IntResult = str(random.randint(self.frange,self.lrange))
+
+    def LetterPassword(self, Head=True, CaLetter=False, Count=2, UserChoice=' '):
+        IntResult = str(random.randint(self.frange, self.lrange))
         if UserChoice != ' ':
             if UserChoice.isalpha() == False:
                 return 0
@@ -34,7 +40,7 @@ class Creater:
                 result = f"{IntResult}{LetterResult}"
             return result
         if CaLetter:
-            SCLetterCount = int(Count/2)
+            SCLetterCount = int(Count / 2)
             SCLetterResultList = []
             for i in range(SCLetterCount):
                 SmLetterResult = random.choice(self.SmLetterList)
@@ -47,9 +53,10 @@ class Creater:
                 result = f"{LetterResult}{IntResult}"
             elif Head == False:
                 result = f"{IntResult}{LetterResult}"
-            return result 
-    def SCharLetterPassword(self,Head=True,Count=1,UserChoice=' '):
-        IntResult = str(random.randint(self.frange,self.lrange))
+            return result
+
+    def SCharLetterPassword(self, Head=True, Count=1, UserChoice=' '):
+        IntResult = str(random.randint(self.frange, self.lrange))
         SCharLetterResultList = []
         if UserChoice != ' ':
             if UserChoice not in self.SCharLetterStr:
@@ -58,7 +65,7 @@ class Creater:
                 if Head:
                     result = f"{UserChoice}{IntResult}"
                 elif Head == False:
-                    result =f"{IntResult}{UserChoice}"
+                    result = f"{IntResult}{UserChoice}"
             return result
         for i in range(Count):
             SCharLetter = random.choice(self.SCharLetterList)
@@ -69,8 +76,9 @@ class Creater:
         elif Head == False:
             result = f"{IntResult}{LetterResult}"
         return result
-    def ALetterPassword(self,LHead=True,SHead=False,LCount=2,SCount=1,LUserChoice=' ',SUserChoice=' ',CaLetter=False):
-        IntResult = str(random.randint(self.frange,self.lrange))
+
+    def ALetterPassword(self, LHead=True, SHead=False, LCount=2, SCount=1, LUserChoice=' ', SUserChoice=' ',CaLetter=False):
+        IntResult = str(random.randint(self.frange, self.lrange))
         if LUserChoice != ' ':
             if LUserChoice.isalpha() == False:
                 return 0
@@ -100,7 +108,7 @@ class Creater:
             elif LHead == False:
                 TempResult = f"{IntResult}{LetterResult}"
         if CaLetter:
-            SCLetterCount = int(LCount/2)
+            SCLetterCount = int(LCount / 2)
             SCLetterResultList = []
             for i in range(SCLetterCount):
                 SmLetterResult = random.choice(self.SmLetterList)
