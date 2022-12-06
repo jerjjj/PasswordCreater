@@ -8,17 +8,19 @@ class Creater:
     def IntPassword(self):
         result = long(random.randint(self.frange,self.lrange))
         return result
-    def LetterPassword(self,Head=true,CaLetter=false,Count=2,UserChoice=' '):
+    def LetterPassword(self,Head=True,CaLetter=False,Count=2,UserChoice=' '):
         CaLetterList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
         SmLetterList = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
         IntResult = str(random.randint(self.frange,self.lrange))
         if UserChoice != ' ':
+            if UserChoice.isalpha() == False:
+                return 0
             if Head:
                 result = f"{UserChoice}{IntResult}"
             else:
                 result = f"{IntResult}{Userchoice}"
             return result
-        if CaLetter == false:
+        if CaLetter == False:
             SmLetterResultList = []
             for i in range(Count):
                 SmLetterResult = random.choice(SmLetter)
@@ -44,12 +46,13 @@ class Creater:
             else:
                 result = f"{InntResult{LetterResult}"
             return result
-   def SCharLetterPassword(self,Head=true,Count=1,UserChoice=' '):
+   def SCharLetterPassword(self,Head=True,Count=1,UserChoice=' '):
        SCharLetterList = [")","`","!","@","#","$","%","^","&","*","_","-","+","=","|","}","]",":",";","<>",".","?","(","{","["]
+       SCharletterStr = "()`!@#$%^&*_-+=|{}[]:;'<>,.?"
        IntResult = str(random.randint(self.frange,self.lrange))
        SCharLetterResultList = []
        if UserChoice != ' ':
-           if UserChoice not in SCharLetterList:
+           if UserChoice not in SCharLetterStr:
                result = 0
            else:
                if Head:
