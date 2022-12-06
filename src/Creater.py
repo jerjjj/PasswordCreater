@@ -87,7 +87,7 @@ class Creater:
                 result = f"{SUserChoice}{IntResult}"
                 return result
             else SHead == False:
-                result =f "{IntResult}{SUserChoice}"
+                result = f"{IntResult}{SUserChoice}"
                 return result
         if CaLetter == False:
             SmLetterResultList = []
